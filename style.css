@@ -466,6 +466,7 @@ footer a:hover {
 
 #home img {
     max-width: 85%;
+    border-radius: 50%;
 }
 
 /* ======================= MOBILE (≤900px) ======================= */
