@@ -19,11 +19,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const openMenu = () => {
         if (!menu) return;
-        menu.classList.add('open');
-        document.body.classList.add('noscroll');
+
+        // 1) Make sure header is compact *first* (affects menu top/height)
         forceCompact = true;
         setCompact();
-        syncMenuHeight(); // <- ensure height is right after fonts/layout settle
+
+        // 2) Measure and set target height before we open
+        //    Temporarily remove 'open' so scrollHeight is accurate
+        menu.classList.remove('open');
+        // Ensure it's visible enough to measure but still collapsed
+        menu.style.visibility = 'hidden';
+        menu.style.pointerEvents = 'none';
+        menu.style.maxHeight = 'none';                // let it expand to natural height for measurement
+        const target = menu.scrollHeight;             // measure
+        menu.style.setProperty('--menu-h', `${target}px`);
+        // Reset collapsed state for starting point of animation
+        menu.style.maxHeight = '';                    // back to CSS (0)
+        menu.style.visibility = '';                   // back to CSS
+        menu.style.pointerEvents = '';                // back to CSS
+
+        // 3) Force a reflow so Android sees the "from" state
+        //    (reading a layout property does this)
+        // eslint-disable-next-line no-unused-expressions
+        menu.offsetHeight;
+
+        // 4) Now open and let the transition run
+        menu.classList.add('open');
+        document.body.classList.add('noscroll');
         burger?.setAttribute('aria-expanded', 'true');
     };
 
