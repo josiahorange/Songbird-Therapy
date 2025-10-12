@@ -111,8 +111,10 @@ i {
 .brand-text {
     display: none;
     font-family: "EB Garamond", serif;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 1.3rem;
+    text-transform: uppercase;
+    text-wrap: wrap;
 }
 
 .site-header.is-compact .logo-square {
@@ -126,12 +128,12 @@ i {
 
 /* sizes at top vs compact */
 .brand img.logo-square {
-    width: 150px;
+    width: 160px;
     padding: 10px;
     position: absolute;
     top: -20px;
     left: 0;
-
+    max-width: 150%;
 }
 
 .site-header.is-compact .brand img.logo-horizontal {
@@ -149,7 +151,7 @@ i {
 .menu a {
     color: var(--ink);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
     padding: .5rem .6rem;
     border-radius: 8px;
 }
@@ -172,7 +174,7 @@ i {
 
 .hero h1 {
     font-family: "EB Garamond", serif;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--teal);
     font-size: clamp(2.2rem, 5vw, 4rem);
     line-height: 1.1;
@@ -247,6 +249,9 @@ i {
     font-size: 2rem;
     font-family: "EB Garamond", serif;
     margin-bottom: 0px;
+    font-weight: 400;
+    font-style: italic;
+    visibility: 0.8;
 }
 
 .accred {
