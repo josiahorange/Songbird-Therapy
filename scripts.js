@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = document.getElementById('name')?.value.trim() || '';
             const email = document.getElementById('email')?.value.trim() || '';
             const message = document.getElementById('message')?.value.trim() || '';
-            const to = 'amanda@songbirdtherapy.uk';
+            const to = 'amanda@amandaorange.co.uk';
             const subject = encodeURIComponent('New enquiry via Amanda Orange Counselling');
             const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
             window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
