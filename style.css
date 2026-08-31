@@ -4,12 +4,15 @@
     --warm-cream: #faf3e6;
     --cold-cream: #fffefc;
     --paper: #F6EEDB;
-    --teal: #0C6B63;
-    --teal-700: #0a5a54;
-    --gold: #CC9533;
+    --olive: #62644d;
+    --olive-700: #4f513d;
+    --terracotta: #BA6F43;
+    --teal: var(--olive);
+    --teal-700: var(--olive-700);
+    --gold: var(--terracotta);
     --ink: #4a453f;
     --muted: #5b584f;
-    --ring: rgba(12, 107, 99, .3);
+    --ring: rgba(186, 111, 67, .3);
     --radius: 14px;
     --shadow: 0 10px 30px rgba(0, 0, 0, .06);
 
@@ -94,7 +97,7 @@ i {
     text-decoration: none;
     color: var(--teal);
     position: relative;
-    min-width: 140px;
+    min-width: 220px;
 }
 
 .brand .logo {
@@ -128,17 +131,17 @@ i {
 
 /* sizes at top vs compact */
 .brand img.logo-square {
-    width: 160px;
-    padding: 10px;
+    width: 190px;
     position: absolute;
-    top: -20px;
+    top: -26px;
     left: 0;
     max-width: 150%;
 }
 
 .site-header.is-compact .brand img.logo-horizontal {
-    width: 36px;
-    height: 36px;
+    width: 220px;
+    height: auto;
+    max-height: 50px;
 }
 
 /* ======================= NAV ======================= */
@@ -235,7 +238,7 @@ i {
 }
 
 .btn-outline:hover {
-    background: rgba(12, 107, 99, 0.1);
+    background: rgba(133, 135, 112, 0.12);
     ;
 }
 
@@ -291,7 +294,7 @@ p.section-intro:last-child {
 
 #about-img {
     margin-left: auto;
-    max-width: 23%;
+    max-width: 50%;
 }
 
 .about .wrap div img {
@@ -494,6 +497,10 @@ footer a:hover {
         padding: 0 var(--container-pad-sm);
     }
 
+    .brand {
+        min-width: 160px;
+    }
+
     /* header border only when compact */
     .site-header {
         border-bottom: none;
@@ -505,14 +512,15 @@ footer a:hover {
 
     /* logo sizes */
     .brand img.logo-square {
-        width: 126px;
+        width: 160px;
         position: static;
         padding-top: 20px;
     }
 
     .site-header.is-compact .brand img.logo-horizontal {
-        width: 45px;
-        height: 45px;
+        width: 185px;
+        height: auto;
+        max-height: 44px;
     }
 
 
@@ -728,12 +736,12 @@ body.noscroll {
     /* align tick with text */
 }
 
-.about .why-songbird {
+.about .why-counselling {
     flex-direction: column;
     gap: 0px;
 }
 
-.about .why-songbird p {
+.about .why-counselling p {
     margin-top: 5px;
     max-width: 100%;
 }
